@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ea77c2443e378f0488f1f5767c9706a3
+guid: 25166149a8dc2ae48af30dda49d07d75
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 259, y: 370, z: 296, w: 369}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -97,44 +97,44 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline:
-    - - {x: 36, y: -185}
-      - {x: 37, y: -221}
-      - {x: -148, y: -222}
-      - {x: -148, y: -185}
-      - {x: -222, y: -185}
+    - - {x: -148, y: -222}
+      - {x: -148, y: -184}
+      - {x: -222, y: -184}
       - {x: -222, y: -148}
       - {x: -259, y: -148}
       - {x: -259, y: -111}
       - {x: -296, y: -111}
-      - {x: -296, y: -74}
-      - {x: -332, y: -74}
-      - {x: -332, y: 0}
-      - {x: -295, y: -1}
-      - {x: -296, y: 73}
-      - {x: -259, y: 74}
+      - {x: -296, y: -73}
+      - {x: -333, y: -73}
+      - {x: -333, y: 0}
+      - {x: -296, y: 0}
+      - {x: -296, y: 74}
+      - {x: -258.5, y: 74}
       - {x: -259, y: 111}
-      - {x: -221, y: 111}
+      - {x: -222, y: 111}
       - {x: -222, y: 148}
-      - {x: -184.19476, y: 148.81812}
-      - {x: -185, y: 184}
+      - {x: -185, y: 148}
+      - {x: -185, y: 185}
       - {x: -111, y: 185}
-      - {x: -110, y: 221}
+      - {x: -111, y: 222}
       - {x: 111, y: 222}
-      - {x: 111, y: 184}
+      - {x: 111, y: 185}
       - {x: 148, y: 185}
       - {x: 148, y: 148}
       - {x: 185, y: 148}
       - {x: 185, y: 111}
       - {x: 222, y: 111}
-      - {x: 221, y: 0}
+      - {x: 222, y: 0}
       - {x: 259, y: 0}
-      - {x: 259, y: -36}
+      - {x: 259, y: -37}
       - {x: 296, y: -37}
-      - {x: 296, y: -73}
+      - {x: 296, y: -74}
       - {x: 259, y: -74}
-      - {x: 258, y: -148}
-      - {x: 222, y: -147}
-      - {x: 220, y: -185}
+      - {x: 259, y: -148}
+      - {x: 222, y: -148}
+      - {x: 222, y: -185}
+      - {x: 37, y: -184}
+      - {x: 37, y: -222}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000

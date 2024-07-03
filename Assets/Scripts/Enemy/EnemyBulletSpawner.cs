@@ -8,6 +8,16 @@ public class EnemyBulletSpawner : Spawner<Bullet>
 
     private WaitForSeconds _bulletFireRate;
 
+    private void OnEnable()
+    {
+        StartCoroutine(CreateBulletCoroutine());
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(CreateBulletCoroutine());
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -32,6 +42,7 @@ public class EnemyBulletSpawner : Spawner<Bullet>
     protected override void OnTakeFromPool(Bullet bullet)
     {
         bullet.transform.position = transform.position;
+
         base.OnTakeFromPool(bullet);
     }
 
@@ -40,6 +51,7 @@ public class EnemyBulletSpawner : Spawner<Bullet>
         Bullet bullet = Instantiate(Prefab, SpawnPosition, transform.rotation);
 
         bullet.GetDirection(_bot.Direction);
+        bullet.GetBulletState(true);
 
         return bullet;
     }

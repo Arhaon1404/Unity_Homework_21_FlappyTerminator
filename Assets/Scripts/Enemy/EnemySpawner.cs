@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class EnemySpawner : Spawner<Bot>
 {
+    [SerializeField] private ScoreCounter _scoreCounter;
     [SerializeField] private float _spawnRate;
-    
+
     private BoxCollider2D _boxCollider;
 
     private WaitForSeconds _enemySpawnRate;
@@ -26,6 +27,8 @@ public class EnemySpawner : Spawner<Bot>
     public void Release(Bot bot)
     {
         Pool.Release(bot);
+
+        bot.ContactOccurred -= Release;
     }
 
     protected override void OnTakeFromPool(Bot bot)
@@ -41,6 +44,9 @@ public class EnemySpawner : Spawner<Bot>
             yield return _enemySpawnRate;
 
             Bot bot = Pool.Get();
+
+            bot.ContactOccurred += Release;
+            bot.BotDestroyed += SetScore;
         }
     }
 
@@ -57,5 +63,12 @@ public class EnemySpawner : Spawner<Bot>
         return new Vector2(axesX, axesY);
     }
 
-    
+    private void SetScore(Bot bot)
+    {
+        _scoreCounter.Add();
+
+        bot.BotDestroyed -= SetScore;
+
+        Release(bot);
+    }
 }

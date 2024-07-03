@@ -38,7 +38,6 @@ public class BirdMover : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed * Time.deltaTime);
     }
 
-
     public void Reset()
     {
         transform.position = _startPosition;

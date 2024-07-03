@@ -24,6 +24,7 @@ public class BirdShooter : Spawner<Bullet>
         Bullet bullet = Instantiate(Prefab, SpawnPosition, transform.rotation);
 
         bullet.GetDirection(transform.right);
+        bullet.GetBulletState(false);
 
         return bullet;
     }
