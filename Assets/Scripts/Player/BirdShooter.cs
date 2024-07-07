@@ -1,9 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BirdShooter : Spawner<Bullet>
 {
+    private Vector2 _originalTransform;
+
+    private void Start()
+    {
+        _originalTransform = transform.right;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -13,9 +18,18 @@ public class BirdShooter : Spawner<Bullet>
         }
     }
 
+    public void Release(Bullet bullet)
+    {
+        Pool.Release(bullet);
+        bullet.ContactOccurred -= Release;
+    }
+
     protected override void OnTakeFromPool(Bullet bullet)
     {
         bullet.transform.position = transform.position;
+
+        bullet.GetDirection(_originalTransform);
+
         base.OnTakeFromPool(bullet);
     }
 
@@ -23,15 +37,15 @@ public class BirdShooter : Spawner<Bullet>
     {
         Bullet bullet = Instantiate(Prefab, SpawnPosition, transform.rotation);
 
-        bullet.GetDirection(transform.right);
         bullet.GetBulletState(false);
 
         return bullet;
     }
 
-    public void Release(Bullet bullet)
+    protected override void OnReturnedToPool(Bullet bullet)
     {
-        Pool.Release(bullet);
-        bullet.ContactOccurred -= Release;
+        bullet.transform.rotation = transform.rotation;
+
+        base.OnReturnedToPool(bullet);
     }
 }

@@ -11,7 +11,7 @@ public class Bullet : StaticMovableObject
 
     public void GetDirection(Vector2 direction)
     {
-        _direction = direction;
+        Direction = direction;
     }
 
     public void ContactOccur()

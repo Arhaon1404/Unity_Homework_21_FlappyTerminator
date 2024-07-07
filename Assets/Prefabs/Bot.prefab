@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816b2c1c43d93054fbb9d1cc861dcef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.1
+  Speed: 0.1
 --- !u!114 &-8604259223865940693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,9 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb63e904591d09419d276b31481b878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BotDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1967369905007979837
 GameObject:
   m_ObjectHideFlags: 0

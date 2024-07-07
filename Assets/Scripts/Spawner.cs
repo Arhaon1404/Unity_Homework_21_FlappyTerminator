@@ -36,7 +36,7 @@ public abstract class Spawner<T> : MonoBehaviour where T : MonoBehaviour
         return Instantiate(Prefab, SpawnPosition, transform.rotation);
     }
 
-    private void OnReturnedToPool(T poolObject)
+    protected virtual void OnReturnedToPool(T poolObject)
     {
         poolObject.gameObject.SetActive(false);
     }
